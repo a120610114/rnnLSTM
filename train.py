@@ -54,7 +54,7 @@ with tf.Session() as sess:
     except Exception:
         logging.debug('no check point found....')
 
-    for x in range(100):
+    for x in range(2):
         logging.debug('epoch [{0}]....'.format(x))
         state = sess.run(model.state_tensor)
 
@@ -62,11 +62,9 @@ with tf.Session() as sess:
 
             ##################
             # Your Code here
-            ##################
-
 
             feed_dict={model.X: dl[0], model.Y: dl[1], model.keep_prob: 0.9}
-
+            ##################  
             gs, _, state, l, summary_string = sess.run(
                 [model.global_step, model.optimizer, model.outputs_state_tensor, model.loss, model.merged_summary_op],feed_dict=feed_dict)
             summary_string_writer.add_summary(summary_string, gs)
