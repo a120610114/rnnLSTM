@@ -20,7 +20,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s', level=logging.DEBUG)
 
 
-# vocabulary = read_data(FLAGS.text)
+
 with open(json_data,'r',encoding="utf-8") as f:
     vocabulary = json.load(f,encoding='utf-8')
 print('Data size', len(vocabulary))

@@ -66,12 +66,8 @@ class Model():
             ##################
             # Your Code here
             
-            ##################
-            # def get_lstm_cell():
-            #     lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(self.dim_embedding, forget_bias=1, state_is_tuple=True)
-            #     lstm_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_cell, output_keep_prob=self.keep_prob)
-            #     return lstm_cell
-            # cell = tf.nn.rnn_cell.MultiRNNCell([get_lstm_cell() for _ in range(self.rnn_layers)], state_is_tuple=True)
+           
+
             lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(self.dim_embedding, forget_bias=1, state_is_tuple=True)
             lstm_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_cell, output_keep_prob=self.keep_prob)
 
@@ -81,7 +77,7 @@ class Model():
 
 
             state = self.state_tensor
-            # print("state",state)
+            ##################
 
             outputs_tensor, final_state=tf.nn.dynamic_rnn(cell,data,initial_state=state)
 
