@@ -15,7 +15,7 @@ import numpy as np
 from flags import parse_args
 FLAGS, unparsed = parse_args()
 
-json_data="data.json"
+json_data="/data/HiBoyljw/rnndata/data.json"
 logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s', level=logging.DEBUG)
 
@@ -34,7 +34,7 @@ with open(FLAGS.reverse_dictionary, encoding='utf-8') as inf:
 
 
 model = Model(learning_rate=FLAGS.learning_rate, batch_size=FLAGS.batch_size, num_steps=FLAGS.num_steps)
-model.build(embedding_file='embedding.npy')
+model.build(embedding_file='/data/HiBoyljw/rnndata/embedding.npy')
 
 
 with tf.Session() as sess:
